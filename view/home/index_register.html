@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%=title%>-<%=_web.sitename%></title>
+    <meta name="keywords" content="<%=_web.keywords%>">
+    <meta name="description" content="<%=title%>-<%=_web.sitename%>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="<%=_web.url%>static/src/css/business/login/register.css" rel="stylesheet">
+    <script src="<%=_web.url%>static/src/js/widget/jquery/jquery-1.9.1.min.js" charset="utf-8"></script>
+    <%include inc/header.html%>
+</head>
+<body>
+<%include inc/menu.html%>
+<div class="regContent">
+    <form id="formid"  name= "myform" method = 'post'  action = '/home/register/doregister' >
+    <p>
+      <label for="username">用户名</label><input type="text" name="username" id="username" value="">
+    </p>
+    <p>
+      <label for="password">密码</label><input type="password" name="password" id="password" >
+    </p>
+    <p class="subBox">
+      <input type="hidden" name="__CSRF__" value="<%=csrf%>">
+      <input type="submit" value="提交"/>
+    </p>
+  </form>
+</div>
+<%include inc/footer.html%>
+</body>
+</html>
