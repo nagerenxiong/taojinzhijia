@@ -22,7 +22,8 @@ export default class extends Base {
     let md5Pas = await think.md5(data.password);
     let result = await this.model("user").addUser({
       name: username,
-      password: md5Pas
+      password: md5Pas,
+      role: 3
     }, {
       name: username
     });

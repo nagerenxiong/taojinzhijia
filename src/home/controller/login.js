@@ -22,6 +22,10 @@ export default class extends Base {
   async redirectAction() {
     return this.display();
   }
+  logoutAction() {
+    this.session();
+    this.redirect("/");
+  }
   async dologinAction() {
     let data = this.post();
     let md5Pas = await think.md5(data.password);

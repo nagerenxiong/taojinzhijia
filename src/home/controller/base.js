@@ -46,6 +46,14 @@ export default class extends think.controller.base {
     let navList = await this.model("home").findAll('menu');
     this.assign("navList", navList);
 
+    //显示用户名
+    let sessionUser = await this.session("userInfo")
+    if (sessionUser) {
+      this.assign("name", sessionUser.name);
+    } else {
+      this.assign("name", null);
+    }
+
   }
   async getConfig() {
     let sysdata = await this.model("home").findOne('system');

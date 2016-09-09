@@ -25,7 +25,6 @@ export default class extends Base {
     //获取后台畅言评论设置
     let setting = await this.model('home').findOne('system_comment');
     this.assign("setting", setting);
-
     return this.display();
   }
   async pageAction() {

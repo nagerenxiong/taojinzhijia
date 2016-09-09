@@ -28,10 +28,14 @@
                 </li>
             </ul>
             <div class="userBox">
-              <a href="/register.html">注册</a>
-              <a href="/links.html">登陆</a>
-              <a href="/links.html">admin</a>
-              <a href="/links.html">退出</a>
+              <% if(typeof(name)=="string"){ %>
+                <a href="/admin/"><%=name%></a>
+                <a href="/home/login/logout">退出</a>
+              <%}else{%>
+                <a href="/register.html">注册</a>
+                <!-- <a href="https://graph.qq.com/oauth2.0/authorize?redirect_uri=http://www.jsout.com/login/qqlogin&response_type=code&client_id=101334443">登陆</a> -->
+                <a href="/login.html">登陆</a>
+              <%}%>
             </div>
         </div>
     </div>
